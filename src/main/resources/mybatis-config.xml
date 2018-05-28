@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 打印输出sql语句 -->
+	<settings>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+    
+    <!--分页插件 -->
+	<plugins>
+	 	<plugin interceptor="com.github.pagehelper.PageInterceptor">
+	       <property name="helperDialect" value="mysql" /> 
+		</plugin>
+	</plugins>
+	
+    <mappers>
+        <!--批量加载mapper文件-->
+        <package name="main.blog.mapper" />
+    </mappers>
+</configuration>
